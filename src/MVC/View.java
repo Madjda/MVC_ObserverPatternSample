@@ -51,7 +51,9 @@ public int getValue()
 
 @Override
 public void volumeChanged(ChangedValueEvent event) {
+	
 	label.setText(Integer.toString(event.getNewValue())) ;
+	System.out.println( "hhhheeeereee ");
 	
 }
 

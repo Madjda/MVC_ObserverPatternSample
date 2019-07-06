@@ -21,7 +21,7 @@ scene=new Scene(root);
 spinner = new Spinner<Integer>(0,50,0);
 spinner.setLayoutX(40);
 spinner.setLayoutY(75);
-spinner.setEditable(true);
+spinner.setEditable(false);
 
 /* Button */
 

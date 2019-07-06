@@ -38,6 +38,7 @@ view.getButton().setOnAction(new EventHandler<ActionEvent>() {
 private void traitClicMethod()
 {
 int valeur= (int) viewSpinner.getSpinner().getValue();
+System.out.println(valeur);
 model.setValue(valeur);
 }
 private void IncrementClick ()
