@@ -33,7 +33,7 @@ root.getChildren().add(spinner);
 primaryStage.setScene(scene);
 primaryStage.show();
 }
-public Spinner getSpinner(){
+public Spinner<Integer> getSpinner(){
 return spinner;
 }
 public Button getButton(){
@@ -43,7 +43,7 @@ return bouton;
 /* Listener */
 
 @Override
-public void volumeChanged(ChangedValueEvent evt){
+public void valueChanged(ChangedValueEvent evt){
 spinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0,1000,evt.getNewValue()));
 }
 }

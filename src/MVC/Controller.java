@@ -4,23 +4,26 @@ public class Controller {
 private Model model;
 private ViewSpinner viewSpinner;
 private View view ;
-public Controller(Model model, ViewSpinner viewSpinner , View view ){
+public Controller(Model model, ViewSpinner viewSpinner , View view )
+
+{
 this.model = model;
 this.viewSpinner = viewSpinner ;
 this.view = view;
 addListenersToModel();
+
 }
-private void addListenersToModel() {
-model.addVolumeListener(viewSpinner);
-model.addVolumeListener(view);
+private void addListenersToModel()
+{
 }
 public void control()
 {
+	
 viewSpinner.getButton().setOnAction(new EventHandler<ActionEvent>() {	
   @Override
   public void handle(ActionEvent e)
     {
-	traitClicMethod(); 
+	validerSpinnerClick(); 
 	}
 }
 );
@@ -28,23 +31,21 @@ view.getButton().setOnAction(new EventHandler<ActionEvent>() {
 	  @Override
 	  public void handle(ActionEvent e)
 	    {
-		IncrementClick(); 
+		validerTextFieldClick(); 
 		}
 	}
 	);
 
 
 }
-private void traitClicMethod()
+private void validerSpinnerClick()
 {
 int valeur= (int) viewSpinner.getSpinner().getValue();
-System.out.println(valeur);
 model.setValue(valeur);
 }
-private void IncrementClick ()
+private void validerTextFieldClick ()
 {
 int valeur = view.getValue() ;
-valeur++;
 model.setValue(valeur);
 view.setText(Integer.toString(model.getValue()));
 }

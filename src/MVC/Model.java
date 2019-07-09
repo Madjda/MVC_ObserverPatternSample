@@ -23,23 +23,23 @@ return value;
 public void setValue(int value) 
 {
 this.value = value;
-fireVolumeChanged();
+fireValueChanged();
 }
 
-public void addVolumeListener(ChangedValueListener listener)
+public void addValueListener(ChangedValueListener listener)
 {
 listnerList.add(listener);
 }
 
-public void removeVolumeListener(ChangedValueListener listener){
+public void removeValueListener(ChangedValueListener listener){
 listnerList.remove(listener);
 }
 
-public void fireVolumeChanged() 
+public void fireValueChanged() 
 {
 ChangedValueEvent evt= new ChangedValueEvent(this,getValue());
 for(int i=0;i<listnerList.size();i++){
-listnerList.get(i).volumeChanged(evt);
+listnerList.get(i).valueChanged(evt);
 }
 
 }
